@@ -88,7 +88,7 @@ export default function FormPage() {
   }, []);
 
   return (
-    <div className="flex justify-center items-center h-[90vh]">
+    <div className="flex justify-center items-center m-2 h-[90vh]">
       <form onSubmit={handleSubmit}>
         <header className="flex justify-between items-center">
           <h1 className="text-2xl font-bold my-2">
