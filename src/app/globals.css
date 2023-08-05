@@ -2,26 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  body {
+    @apply bg-[#0A0B0D] text-white;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .container {
+    @apply max-w-screen-xl mx-auto;
+  }
+
+  .form-control {
+    @apply bg-[#1C1F23] rounded-md border border-[#2E3137] text-[#FFFFFF] shadow w-full px-3 py-2;
+  }
+
+  .btn-primary {
+    @apply bg-[#00BFBF] rounded-md hover:bg-[#00A6A6] border border-[#00CCCC] focus:ring-2 ring-[#8df2f2] w-full px-3 py-2;
+  }
+
+  .btn-small {
+    @apply rounded-lg bg-[#1C1F23] hover:bg-[#2E3137] border border-[#2E3137] focus:ring-[1px] focus:ring-[#2E3137] px-2;
+  }
+
+  .btn-mid {
+    @apply rounded-lg bg-[#1C1F23] hover:bg-[#2E3137] border border-[#2E3137] focus:ring-[1px] focus:ring-[#2E3137] px-3 py-2;
+  }
 }
