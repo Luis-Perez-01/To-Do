@@ -1,4 +1,4 @@
-import {connect, connection } from "mongoose";
+import { connect, connection } from "mongoose";
 
 const conn = {
   isConnected: false,
@@ -7,8 +7,7 @@ const conn = {
 export async function connectDB() {
   if (conn.isConnected) return;
 
-  const db = await connect('mongodb://127.0.0.1:27017/nextmongocrud');
-  console.log(db.connection.db.databaseName)
+  const db = await connect(process.env.MONDODB_URI);
   conn.isConnected = db.connections[0].readyState;
 }
 
@@ -18,4 +17,3 @@ connection.on("connected", () => {
 connection.on("error", (err) => {
   console.log("Mongoose is connection error", err);
 });
-
